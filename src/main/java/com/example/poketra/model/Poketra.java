@@ -7,6 +7,8 @@ public class Poketra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id_poketra;
+    @Column(name = "nom")
+    String nom;
     @Column(name = "idStyle")
     Integer id_style;
     @Column(name = "idType")
@@ -25,6 +27,14 @@ public class Poketra {
 
     public void setId_poketra(Integer id_poketra) {
         this.id_poketra = id_poketra;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public Integer getId_style() {

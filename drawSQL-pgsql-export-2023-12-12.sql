@@ -27,10 +27,10 @@ CREATE TABLE poketra(
 
 CREATE TABLE production(
     id_production SERIAL PRIMARY KEY,
+    id_poketra INTEGER NOT NULL,
     id_matiere INTEGER NOT NULL,
     id_taille INTEGER NOT NULL,
-    id_poketra INTEGER NOT NULL,
-    quatite DECIMAL(10,2) NOT NULL,
+    quantite DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (id_matiere) REFERENCES matiere(id_matiere),
     FOREIGN KEY (id_taille) REFERENCES taille(id_taille),
     FOREIGN KEY (id_poketra) REFERENCES poketra(id_poketra)

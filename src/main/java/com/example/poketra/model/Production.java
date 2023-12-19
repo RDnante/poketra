@@ -7,6 +7,8 @@ public class Production {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id_production;
+    @Column(name = "id_poketra")
+    Integer id_poketra;
     @Column(name = "id_matiere")
     Integer id_matiere;
     @Column(name = "id_taille")
