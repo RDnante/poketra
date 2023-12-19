@@ -1,6 +1,8 @@
 package com.example.poketra.model;
 
+import com.example.poketra.repository.MatiereRepository;
 import jakarta.persistence.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity(name = "matiere")
 public class Matiere {

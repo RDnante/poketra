@@ -22,3 +22,7 @@ ALTER TABLE
     "look_matiere" ADD CONSTRAINT "look_matiere_id_matiere_foreign" FOREIGN KEY("id_matiere") REFERENCES "matiere"("id_matiere");
 ALTER TABLE
     "look_matiere" ADD CONSTRAINT "look_matiere_id_look_foreign" FOREIGN KEY("id_look") REFERENCES "look"("id_look");
+
+
+-- conception
+
