@@ -1,25 +1,64 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>insert matiere</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}" >
+    <title>Insert_matiere</title>
+    <link rel="stylesheet" th:href="@{/template/assets/css/main.css}" />
+    <noscript><link rel="stylesheet" th:href="@{/template/assets/css/noscript.css}" /></noscript>
 </head>
-<body>
-    <div class="container" style="margin-top: 200px;">
-        <div class="row">
-            <div class="col-md-5 offset-md-3" style="border: solid black; padding: 50px;">
-                <h1>avoir liste matiere</h1>
-                <form class="form-group" th:action="@{/matiere/insert}" th:method="post">
-                    <label for="nom">nom matiere :</label>
-                    <input class="form-control" type="text" id="nom" name="nom">
-                    <label for="luxure">niveau luxure</label>
-                    <input class="form-control" type="number" id="luxure" name="luxure">
-                    <input style="margin-left: 200px; margin-top: 20px;" class="btn btn-success" type="submit" value="inserer">
-                </form>
+<body class="is-preload">
+<div id="wrapper">
+
+    <header id="header">
+        <a href="index.html" class="logo">poketra</a>
+    </header>
+
+    <nav id="nav">
+        <ul class="links">
+            <li><a href="index.html">This is Massively</a></li>
+            <li class="active"><a href="generic.html">Generic Page</a></li>
+            <li><a href="elements.html">Elements Reference</a></li>
+        </ul>
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <h2>insertion de matiere</h2>
+
+        <form method="post" action="#">
+            <div class="row gtr-uniform">
+                <div class="col-6 col-12-xsmall">
+                    <input type="text" name="nom" id="nom" value="" placeholder="nom" />
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input type="number" name="unite" id="unite" value="" placeholder="unite" />
+                </div>
+                <!-- Break -->
+                <div class="col-12">
+                    <ul class="actions">
+                        <li><input type="submit" value="Save matiere" class="primary" /></li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
+
+
+
+</div>
+
+<script th:src="@{/template/assets/js/jquery.min.js}"></script>
+<script th:src="@{/template/assets/js/jquery.scrollex.min.js}"></script>
+<script th:src="@{/template/assets/js/jquery.scrolly.min.js}"></script>
+<script th:src="@{/template/assets/js/browser.min.js}"></script>
+<script th:src="@{/template/assets/js/breakpoints.min.js}"></script>
+<script th:src="@{/template/assets/js/util.js}"></script>
+<script th:src="@{/template/assets/js/main.js}"></script>
 </body>
 </html>
