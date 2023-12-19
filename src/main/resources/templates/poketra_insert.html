@@ -31,19 +31,24 @@
     <div id="main">
         <h2>insertion poketra</h2>
 
-        <form method="post" action="#">
+        <form method="post" th:action="@{/poketra/insert}">
             <div class="row gtr-uniform">
                 
                 <div class="col-12">
                     <label for="style" class="form-control">style</label>
                     <select name="style" id="style">
-                        <option value="">- Category -</option>
+                        <div th:each="style : ${liststyle}">
+                            <option th:value="${style.getId_style()}" th:text="${style.getNom()}"></option>
+
+                        </div>
                     </select>
                 </div>
                 <div class="col-12">
                     <label for="type" class="form-control">type</label>
                     <select name="type" id="type">
-                        <option value="">Category -</option>
+                        <div th:each="type : ${listtype}">
+                            <option th:value="${type.getId_type()}" th:text="${type.getNom()}"></option>
+                        </div>
                     </select>
                 </div>
                 <div class="col-6 col-12-xsmall">

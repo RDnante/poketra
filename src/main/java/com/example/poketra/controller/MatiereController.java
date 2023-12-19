@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/matiere")
 public class MatiereController {
@@ -22,8 +24,16 @@ public class MatiereController {
         return "matiere_insert";
     }
 
+    @GetMapping("/selection")
+    public String selection(Model model) {
+        List<Matiere> matiereList = matiereRepository.findAll();
+        model.addAttribute("listmatiere",matiereList);
+
+        return "matiere_seletion";
+    }
+
     @PostMapping("/insert")
-    public String insert(Model model, @RequestParam("nom")String nom,@RequestParam("luxure") Integer luxure) {
+    public String insert(Model model, @RequestParam("nom")String nom,@RequestParam("unite") Integer luxure) {
         Matiere m = new Matiere();
         m.setNom(nom);
         m.setLuxure(luxure);

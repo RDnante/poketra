@@ -40,10 +40,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Item 1</td>
-                    <td>Ante turpis integer aliquet porttitor.</td>
-                    <td>29.99</td>
+                <tr th:each="production : ${listproduction}">
+                    <td th:text="${production.getPoketra().getNom()}"></td>
+                    <td th:text="${production.getTaille().getNom()}"></td>
+                    <td th:text="${production.getQuantite()}"></td>
                 </tr>
 
                 </tfoot>

@@ -31,28 +31,34 @@
   <div id="main">
     <h2>insertion Production</h2>
 
-    <form method="post" action="#">
+    <form method="post" th:action="@{/production/insert}">
       <div class="row gtr-uniform">
 
         <div class="col-12">
           <label for="poketra" class="form-control">poketra</label>
           <select name="poketra" id="poketra">
-            <option value="">poketra </option>
+            <div th:each="poketra : ${listpoketra}">
+              <option th:value="${poketra.getId_poketra()}" th:text="${poketra.getNom()}"></option>
+            </div>
           </select>
         </div>
         <div class="col-12">
           <label for="matiere" class="form-control">matiere</label>
           <select name="matiere" id="matiere">
-            <option value="">matiere</option>
+            <div th:each="matiere : ${listmatiere}">
+              <option th:value="${matiere.getId_matiere()}" th:text="${matiere.getNom()}"></option>
+            </div>
           </select>
         </div>
         <div class="col-12">
           <label for="taille" class="form-control">taille</label>
           <select name="taille" id="taille">
-            <option value="">taille</option>
+            <div th:each="taille : ${listtaille}">
+              <option th:value="${taille.getId_taille()}" th:text="${taille.getNom()}"></option>
+            </div>
           </select>
         </div>
-        <div class="col-6 col-12-xsmall">
+        <div class="col-12 col-12-xsmall">
           <input type="number" name="quantite" id="quantite" value="" placeholder="quantite" />
         </div>
         <!-- Break -->

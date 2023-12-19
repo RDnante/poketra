@@ -15,6 +15,10 @@ public class Production {
     Integer id_taille;
     @Column(name = "quantite")
     Double quantite;
+    @Transient
+    Poketra poketra;
+    @Transient
+    Taille taille;
 
     public Production() {
     }
@@ -25,6 +29,30 @@ public class Production {
 
     public void setId_production(Integer id_production) {
         this.id_production = id_production;
+    }
+
+    public Integer getId_poketra() {
+        return id_poketra;
+    }
+
+    public Poketra getPoketra() {
+        return poketra;
+    }
+
+    public void setPoketra(Poketra poketra) {
+        this.poketra = poketra;
+    }
+
+    public Taille getTaille() {
+        return taille;
+    }
+
+    public void setTaille(Taille taille) {
+        this.taille = taille;
+    }
+
+    public void setId_poketra(Integer id_poketra) {
+        this.id_poketra = id_poketra;
     }
 
     public Integer getId_matiere() {
