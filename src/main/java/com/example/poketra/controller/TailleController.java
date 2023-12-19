@@ -28,5 +28,7 @@ public class TailleController {
         taille.setNom(nom);
         taille.setUnite(unite);
         tailleRepository.save(taille);
+
+        return "taille_insert";
     }
 }

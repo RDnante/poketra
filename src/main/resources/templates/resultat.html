@@ -35,13 +35,15 @@
                 <thead>
                 <tr>
                     <th>Nom</th>
+                    <th>style</th>
                     <th>Taille</th>
                     <th>quantite</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="production : ${listproduction}">
-                    <td th:text="${production.getPoketra().getNom()}"></td>
+                    <td th:text="${production.getPoketra().getType().getNom()}"></td>
+                    <td th:text="${production.getPoketra().getStyle().getNom()}"></td>
                     <td th:text="${production.getTaille().getNom()}"></td>
                     <td th:text="${production.getQuantite()}"></td>
                 </tr>

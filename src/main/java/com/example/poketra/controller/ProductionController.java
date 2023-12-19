@@ -55,7 +55,7 @@ public class ProductionController {
         production.setQuantite(quantite);
 
         productionRepository.save(production);
-        return "production_insert";
+        return "redirect:/production/page";
     }
 
     @PostMapping("/matiere")
