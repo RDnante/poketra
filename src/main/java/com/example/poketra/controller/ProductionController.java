@@ -60,9 +60,11 @@ public class ProductionController {
 
     @PostMapping("/matiere")
     public String matiere(Model model,@RequestParam("Matiere") Integer idmatiere) {
+        Matiere m = matiereRepository.findById(idmatiere).get();
         List<Production> productionList = productionRepository.getAllProductionBymatiere(idmatiere);
         List<Production> reel = productionService.initProduction(productionList);
         model.addAttribute("listproduction",reel);
+        model.addAttribute("matiere",m);
 
         return "resultat";
     }

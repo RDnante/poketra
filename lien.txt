@@ -1,0 +1,7 @@
+/matiere/pageinsert     : insertion matiere
+/matiere/selection      : selection matiere pour afficher les poketra
+/poketra/page           : page insertion de poketra
+/production/page        : page insertion de production de poketra
+/style/page             : page insertion de style
+/taille/pageinsert      : page insertion de taille
+/type/page              : page insertio de type

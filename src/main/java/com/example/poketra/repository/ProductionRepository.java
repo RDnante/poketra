@@ -9,4 +9,6 @@ import java.util.List;
 public interface ProductionRepository extends JpaRepository<Production,Integer> {
     @Query("from production where id_matiere = ?1")
     public List<Production> getAllProductionBymatiere(int id_matiere);
+
+
 }

@@ -1,4 +1,4 @@
-CREATE TABLE type (
+   CREATE TABLE type (
     id_type SERIAL PRIMARY KEY,
     Nom VARCHAR(255) NOT NULL
 );
@@ -10,6 +10,9 @@ CREATE TABLE matiere(
     id_matiere SERIAL PRIMARY KEY,
     Nom VARCHAR(255) NOT NULL
 );
+
+alter  table  matiere add column prix decimal;
+
 CREATE  TABLE taille(
     id_taille SERIAL PRIMARY KEY,
     Nom VARCHAR(255) NOT NULL,
@@ -35,3 +38,13 @@ CREATE TABLE production(
     FOREIGN KEY (id_taille) REFERENCES taille(id_taille),
     FOREIGN KEY (id_poketra) REFERENCES poketra(id_poketra)
 );
+
+
+create view production_prix as
+select p.id_poketra,p.id_matiere,m.prix,p.quantite,(m.prix * p.quantite) as prix_total from  production as p
+    join matiere m on m.id_matiere = p.id_matiere;
+
+create view production_prix_total as
+    select id_poketra,sum(prix_total) as total from production_prix group by id_poketra;
+
+select id_poketra from production_prix_total where total > 300 and total < 1000;
