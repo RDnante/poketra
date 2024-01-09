@@ -3,7 +3,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Insert_matiere</title>
+    <title>Resultat de recherche</title>
     <link rel="stylesheet" th:href="@{/template/assets/css/main.css}" />
     <noscript><link rel="stylesheet" th:href="@{/template/assets/css/noscript.css}" /></noscript>
 </head>
@@ -29,32 +29,35 @@
     </nav>
 
     <div id="main">
-        <h2>insertion de matiere</h2>
+        <h3>Resultat de recherche</h3>
+        <div class="table-wrapper">
+            <table class="alt">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Style</th>
+                    <th>Prix</th>
+                   <!-- <th>Taille</th>
+                    <th>quantite</th>-->
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="production : ${listproduction}">
+                    <td th:text="${production.getPoketra().getType().getNom()}"></td>
+                    <td th:text="${production.getPoketra().getStyle().getNom()}"></td>
+                    <td th:text="${production.getPoketra().getStyle().getNom()}"></td>
+                </tr>
 
-        <form method="post" th:action="@{/matiere/insert}">
-            <div class="row gtr-uniform">
-                <div class="col-6 col-12-xsmall">
-                    <input type="text" name="nom" id="nom" value="" placeholder="nom" />
-                </div>
-                <div class="col-6 col-12-xsmall">
-                    <input type="number" name="unite" id="unite" value="" placeholder="unite" />
-                </div>
-                <div class="col-6 col-12-xsmall">
-                    <input type="number" name="prix" id="prix" value="" placeholder="prix" />
-                </div>
-                <!-- Break -->
-                <div class="col-12">
-                    <ul class="actions">
-                        <li><input type="submit" value="Save matiere" class="primary" /></li>
-                    </ul>
-                </div>
-            </div>
-        </form>
+                </tfoot>
+            </table>
+        </div>
     </div>
-
-
-
+    </form>
 </div>
+
+
+
+
 
 <script th:src="@{/template/assets/js/jquery.min.js}"></script>
 <script th:src="@{/template/assets/js/jquery.scrollex.min.js}"></script>
