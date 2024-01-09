@@ -3,7 +3,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Insert_matiere</title>
+    <title>Insert_prix</title>
     <link rel="stylesheet" th:href="@{/template/assets/css/main.css}" />
     <noscript><link rel="stylesheet" th:href="@{/template/assets/css/noscript.css}" /></noscript>
 </head>
@@ -29,23 +29,20 @@
     </nav>
 
     <div id="main">
-        <h2>insertion de matiere</h2>
+        <h2>Insertion de prix</h2>
 
-        <form method="post" th:action="@{/matiere/insert}">
+        <form method="post" th:action="@{/prix/insert}">
             <div class="row gtr-uniform">
                 <div class="col-6 col-12-xsmall">
-                    <input type="text" name="nom" id="nom" value="" placeholder="nom" />
+                    <input type="number" name="prix_min" id="prix_min" value="" placeholder="prix minimum" />
                 </div>
                 <div class="col-6 col-12-xsmall">
-                    <input type="number" name="unite" id="unite" value="" placeholder="unite" />
-                </div>
-                <div class="col-6 col-12-xsmall">
-                    <input type="number" name="prix" id="prix" value="" placeholder="prix" />
+                    <input type="number" name="prix_max" id="prix_max" value="" placeholder="prix maximum" />
                 </div>
                 <!-- Break -->
                 <div class="col-12">
                     <ul class="actions">
-                        <li><input type="submit" value="Save matiere" class="primary" /></li>
+                        <li><input type="submit" value="Rechercher" class="primary" /></li>
                     </ul>
                 </div>
             </div>
