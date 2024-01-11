@@ -10,5 +10,6 @@ public interface ProductionRepository extends JpaRepository<Production,Integer> 
     @Query("from production where id_matiere = ?1")
     public List<Production> getAllProductionBymatiere(int id_matiere);
 
-
+    @Query("from production where id_poketra = ?1 and id_taille = ?2")
+    public List<Production> getAllProducitonBymatiereBypoketa(int id_poketra, int id_taille);
 }

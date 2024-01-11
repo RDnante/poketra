@@ -39,6 +39,23 @@ CREATE TABLE production(
     FOREIGN KEY (id_poketra) REFERENCES poketra(id_poketra)
 );
 
+-- 11/01/2024
+create table entrer_stock_matiere (
+    id_entrer_stock serial primary key,
+    id_matiere Integer references matiere(id_matiere),
+    quantite decimal,
+    date_entrer date default current_date
+);
+
+create table sortie_stock_matiere (
+    id_sortie_stock serial primary key,
+    id_matiere INTEGER references matiere(id_matiere),
+    quantite decimal,
+    date_sortie date default current_date
+);
+
+insert into entrer_stock_matiere values (default,4,5,default);
+insert into sortie_stock_matiere values (default,4,2,default);
 
 create view production_prix as
 select p.id_poketra,p.id_taille,p.id_matiere,m.prix,p.quantite,(m.prix * p.quantite) as prix_total from  production as p
@@ -48,3 +65,8 @@ create view production_prix_total as
     select id_poketra,id_taille,sum(prix_total) as total from production_prix group by id_poketra,id_taille;
 
 select id_poketra,id_taille from production_prix_total where total > 300 and total < 1000;
+
+create view reste_stock_matiere as
+select esm.id_matiere,sum(esm.quantite) as sum_entrer,sum(ssm.quantite) as sum_sortie,(sum(esm.quantite) - sum(ssm.quantite)) as reste from entrer_stock_matiere as esm join
+    sortie_stock_matiere ssm on esm.id_matiere = ssm.id_matiere
+    group by esm.id_matiere;
