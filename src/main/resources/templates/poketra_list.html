@@ -35,17 +35,20 @@
                 <thead>
                 <tr>
                     <th>Nom</th>
-                    <th>Style</th>
+                    <th>taille</th>
+<!--                    <th>Style</th>-->
+<!--                    <th>type</th>-->
                     <th>Prix</th>
-                   <!-- <th>Taille</th>
-                    <th>quantite</th>-->
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="production : ${listproduction}">
-                    <td th:text="${production.getPoketra().getType().getNom()}"></td>
-                    <td th:text="${production.getPoketra().getStyle().getNom()}"></td>
-                    <td th:text="${production.getPoketra().getStyle().getNom()}"></td>
+                <tr th:each="poketra : ${listpoketra}">
+                    <td th:text="${@poketraRepository.findById(poketra.getId_poketra()).get().getNom()}"></td>
+                    <td th:text="${@tailleRepository.findById(poketra.getId_taille()).get().getNom()}"></td>
+<!--                    <td th:text="${@styleRepository.findById(@poketraRepository.findById(poketra.getId_poketra()).get().getId_style()).get().getNom()}"></td>-->
+<!--                    <td th:text="${@typeRepository.findById(@poketraRepository.findById(poketra.getId_poketra()).get().getId_type()).get().getNom()}"></td>-->
+                    <td th:text="${@production_prix_total.total_Prix(poketra.getId_poketra(),poketra.getId_taille())}"></td>
+
                 </tr>
 
                 </tfoot>

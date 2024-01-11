@@ -75,7 +75,9 @@ public class Production {
         return quantite;
     }
 
-    public void setQuantite(Double quantite) {
+    public void setQuantite(Double quantite) throws Exception {
+        if (quantite <= 0) throw new Exception("valeur invalide");
+
         this.quantite = quantite;
     }
 }

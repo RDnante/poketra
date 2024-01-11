@@ -33,12 +33,18 @@ public class MatiereController {
     }
 
     @PostMapping("/insert")
-    public String insert(Model model, @RequestParam("nom")String nom,@RequestParam("unite") Integer luxure) {
-        Matiere m = new Matiere();
-        m.setNom(nom);
-        m.setLuxure(luxure);
-        matiereRepository.save(m);
+    public String insert(Model model, @RequestParam("nom")String nom,@RequestParam("unite") Integer luxure,@RequestParam("prix") Double prix) {
+        try {
+            Matiere m = new Matiere();
+            m.setNom(nom);
+            m.setLuxure(luxure);
+            m.setPrix(prix);
+            matiereRepository.save(m);
 
-        return "matiere_insert";
+            return "matiere_insert";
+        }catch (Exception e) {
+            model.addAttribute("message",e.getMessage());
+            return "erreur";
+        }
     }
 }

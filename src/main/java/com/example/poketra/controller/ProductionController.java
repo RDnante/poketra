@@ -48,14 +48,19 @@ public class ProductionController {
 
     @PostMapping("/insert")
     public String insert(Model model, @RequestParam("poketra") Integer idpoketra,@RequestParam("matiere") Integer idmatiere,@RequestParam("taille") Integer idtaille,@RequestParam("quantite") double quantite) {
-        Production production = new Production();
-        production.setId_poketra(idpoketra);
-        production.setId_matiere(idmatiere);
-        production.setId_taille(idtaille);
-        production.setQuantite(quantite);
+        try {
+            Production production = new Production();
+            production.setId_poketra(idpoketra);
+            production.setId_matiere(idmatiere);
+            production.setId_taille(idtaille);
+            production.setQuantite(quantite);
 
-        productionRepository.save(production);
-        return "redirect:/production/page";
+            productionRepository.save(production);
+            return "redirect:/production/page";
+        } catch (Exception e) {
+            model.addAttribute("message",e.getMessage());
+            return "erreur";
+        }
     }
 
     @PostMapping("/matiere")

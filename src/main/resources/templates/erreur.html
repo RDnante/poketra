@@ -29,24 +29,10 @@
     </nav>
 
     <div id="main">
-        <h2>Insertion de prix</h2>
+        <h2>Erreur </h2>
 
-        <form method="get" th:action="@{/prix/recherche}">
-            <div class="row gtr-uniform">
-                <div class="col-6 col-12-xsmall">
-                    <input type="number" name="prix_min" id="prix_min" value="" placeholder="prix minimum" />
-                </div>
-                <div class="col-6 col-12-xsmall">
-                    <input type="number" name="prix_max" id="prix_max" value="" placeholder="prix maximum" />
-                </div>
-                <!-- Break -->
-                <div class="col-12">
-                    <ul class="actions">
-                        <li><input type="submit" value="Rechercher" class="primary" /></li>
-                    </ul>
-                </div>
-            </div>
-        </form>
+        <h3 th:text="${message}"></h3>
+
     </div>
 
 

@@ -41,10 +41,10 @@ CREATE TABLE production(
 
 
 create view production_prix as
-select p.id_poketra,p.id_matiere,m.prix,p.quantite,(m.prix * p.quantite) as prix_total from  production as p
+select p.id_poketra,p.id_taille,p.id_matiere,m.prix,p.quantite,(m.prix * p.quantite) as prix_total from  production as p
     join matiere m on m.id_matiere = p.id_matiere;
 
 create view production_prix_total as
-    select id_poketra,sum(prix_total) as total from production_prix group by id_poketra;
+    select id_poketra,id_taille,sum(prix_total) as total from production_prix group by id_poketra,id_taille;
 
-select id_poketra from production_prix_total where total > 300 and total < 1000;
+select id_poketra,id_taille from production_prix_total where total > 300 and total < 1000;

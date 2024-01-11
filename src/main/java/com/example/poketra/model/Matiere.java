@@ -13,6 +13,8 @@ public class Matiere {
     String nom;
     @Column(name = "luxure")
     Integer luxure;
+    @Column(name = "prix")
+    Double prix;
 
     public Matiere() {
     }
@@ -39,5 +41,16 @@ public class Matiere {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public Double getPrix() {
+        return prix;
+    }
+
+    public void setPrix(Double prix) throws Exception {
+        if (prix < 0) {
+            throw new Exception("pas de valeur negative");
+        }
+        this.prix = prix;
     }
 }
