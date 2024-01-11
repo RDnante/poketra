@@ -45,6 +45,12 @@
           <div class="col-6 col-12-xsmall">
             <input type="number" name="unite" id="unite" />
           </div>
+          <label for="taille" class="form-control">Taille</label>
+          <select name="taille" id="taille">
+            <div th:each="">
+              <option th:value="${}" th:text="${}"></option>
+            </div>
+          </select>
           <label for="date" class="form-control">Date</label>
           <div class="col-6 col-12-xsmall">
             <input type="date" name="date" id="date" />
