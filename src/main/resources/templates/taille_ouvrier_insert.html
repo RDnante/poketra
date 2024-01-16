@@ -1,0 +1,80 @@
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>insertion ouvrier par taille</title>
+    <link rel="stylesheet" th:href="@{/template/assets/css/main.css}" />
+    <noscript><link rel="stylesheet" th:href="@{/template/assets/css/noscript.css}" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+    <header id="hea<!DOCTYPE html>
+der">
+        <a href="index.html" class="logo">poketra</a>
+    </header>
+
+    <nav id="nav">
+        <ul class="links">
+            <li><a href="index.html">This is Massively</a></li>
+            <li class="active"><a href="generic.html">Generic Page</a></li>
+            <li><a href="elements.html">Elements Reference</a></li>
+        </ul>
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <h2>Ouvrier par taille</h2>
+
+        <form method="post" th:action="@{/taille_ouvrier/insert}">
+            <div class="row gtr-uniform">
+
+                <div class="col-12">
+                    <label for="taille" class="form-control">taille</label>
+                    <select name="taille" id="taille">
+                        <div th:each="">
+                            <option th:value="" th:text=""></option>
+                        </div>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="ouvrier" class="form-control">Ouvrier</label>
+                    <select name="ouvrier" id="ouvrier">
+                        <div th:each="">
+                            <option th:value="" th:text=""></option>
+                        </div>
+                    </select>
+                    <div class="col-6 col-12-xsmall">
+                        <input type="number" name="unite" id="unite" value="" placeholder="nombre d'ouvrier" />
+                    </div>
+                </div>
+                <!-- Break -->
+
+                <!-- Break -->
+                <div class="col-12">
+                    <ul class="actions">
+                        <li><input type="submit" value="Inserer" class="primary" /></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+<script th:src="@{/template/assets/js/jquery.min.js}"></script>
+<script th:src="@{/template/assets/js/jquery.scrollex.min.js}"></script>
+<script th:src="@{/template/assets/js/jquery.scrolly.min.js}"></script>
+<script th:src="@{/template/assets/js/browser.min.js}"></script>
+<script th:src="@{/template/assets/js/breakpoints.min.js}"></script>
+<script th:src="@{/template/assets/js/util.js}"></script>
+<script th:src="@{/template/assets/js/main.js}"></script>
+</body>
+</html>

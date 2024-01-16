@@ -1,16 +1,16 @@
-<!DOCTYPE html>
 <html lang="en">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Fabrication poketra</title>
+  <title>insertion duree par style</title>
   <link rel="stylesheet" th:href="@{/template/assets/css/main.css}" />
   <noscript><link rel="stylesheet" th:href="@{/template/assets/css/noscript.css}" /></noscript>
 </head>
 <body class="is-preload">
 <div id="wrapper">
 
-  <header id="header">
+  <header id="hea<!DOCTYPE html>
+der">
     <a href="index.html" class="logo">poketra</a>
   </header>
 
@@ -29,40 +29,36 @@
   </nav>
 
   <div id="main">
-    <h2>Selection matiere</h2>
+    <h2>Duree min du style</h2>
 
-    <form method="post" th:action="@{/fabrication/insert}">
+    <form method="post" th:action="@{/style_duree/insert}">
       <div class="row gtr-uniform">
 
         <div class="col-12">
-          <label for="poketra" class="form-control">Nom Poketra</label>
-          <select name="poketra" id="poketra">
-            <div th:each="poketra : ${listpoketra}">
-              <option th:value="${poketra.getId_poketra()}" th:text="${poketra.getNom()}"></option>
+          <label for="duree" class="form-control">duree</label>
+          <select name="duree" id="duree">
+            <div th:each="">
+              <option th:value="" th:text=""></option>
             </div>
           </select>
-          <label for="taille" class="form-control">Taille</label>
-          <select name="taille" id="taille">
-            <div th:each="taille : ${listtaille}">
-              <option th:value="${taille.getId_taille()}" th:text="${taille.getNom()}"></option>
+        </div>
+        <div class="col-12">
+          <label for="ouvrier" class="form-control">Ouvrier</label>
+          <select name="ouvrier" id="ouvrier">
+            <div th:each="">
+              <option th:value="" th:text=""></option>
             </div>
           </select>
-          <label for="unite" class="form-control">Quantite</label>
           <div class="col-6 col-12-xsmall">
-            <input type="number" name="unite" id="unite"/>
+            <input type="number" name="unite" id="unite" value="" placeholder="nombre d'ouvrier" />
           </div>
-          <label for="date" class="form-control">Date</label>
-          <div class="col-6 col-12-xsmall">
-            <input type="date" name="date" id="date" />
-          </div>
-
         </div>
         <!-- Break -->
 
         <!-- Break -->
         <div class="col-12">
           <ul class="actions">
-            <li><input type="submit" value="Ajouter stock" class="primary" /></li>
+            <li><input type="submit" value="Inserer" class="primary" /></li>
           </ul>
         </div>
       </div>
