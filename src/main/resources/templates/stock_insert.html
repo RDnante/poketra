@@ -31,12 +31,12 @@
     <div id="main">
         <h2>Selection matiere</h2>
 
-        <form method="post" th:action="@{/stock/matiere}">
+        <form method="post" th:action="@{/entrer/insert}">
             <div class="row gtr-uniform">
 
                 <div class="col-12">
                     <label for="Matiere" class="form-control">Matiere</label>
-                    <select name="Matiere" id="Matiere">
+                    <select name="matiere" id="Matiere">
                         <div th:each="matiere : ${listmatiere}">
                             <option th:value="${matiere.getId_matiere()}" th:text="${matiere.getNom()}"></option>
                         </div>

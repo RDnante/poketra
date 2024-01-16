@@ -3,6 +3,7 @@ package com.example.poketra.model;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.WeakHashMap;
 
 @Entity(name = "entrer_stock_matiere")
 public class Entrer_stock_matiere {
@@ -39,7 +40,10 @@ public class Entrer_stock_matiere {
         return quantite;
     }
 
-    public void setQuantite(Double quantite) {
+    public void setQuantite(Double quantite) throws Exception {
+        if (quantite < 0) {
+            throw new Exception("valeur invalide");
+        }
         this.quantite = quantite;
     }
 

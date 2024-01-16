@@ -4,6 +4,7 @@ import com.example.poketra.model.Poketra;
 import com.example.poketra.model.Production;
 import com.example.poketra.model.Reste_stock_matiere;
 import com.example.poketra.model.Sortie_stock_matiere;
+import com.example.poketra.repository.MatiereRepository;
 import com.example.poketra.repository.ProductionRepository;
 import com.example.poketra.repository.Sortie_stock_matiereRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class Sortie_stock_matiereService {
     ProductionRepository productionRepository;
     @Autowired
     Sortie_stock_matiereRepository sortieStockMatiereRepository;
+    @Autowired
+    MatiereRepository matiereRepository;
 
     public List<Sortie_stock_matiere> fabrication(Integer id_poketra,Integer id_taille,Double quantite,String date) throws Exception {
         List< Production> productions = productionRepository.getAllProducitonBymatiereBypoketa(id_poketra,id_taille);
@@ -28,8 +31,8 @@ public class Sortie_stock_matiereService {
             Reste_stock_matiere r = new Reste_stock_matiere();
             r = r.quantite_entrer(p.getId_matiere(),null);
             double sortie = quantite * p.getQuantite();
-            if (r.getSum_entrer() - sortie < 0) {
-                throw new Exception("quantite insuffisant");
+            if (r.getReste() - sortie < 0) {
+                throw new Exception("quantite insuffisant "+matiereRepository.findById(p.getId_matiere()).get().getNom()+" de "+ (sortie - r.getReste()));
             }
             else {
                 Sortie_stock_matiere s = new Sortie_stock_matiere();

@@ -31,26 +31,26 @@
   <div id="main">
     <h2>Selection matiere</h2>
 
-    <form method="post" th:action="@{fabrication/insert}">
+    <form method="post" th:action="@{/fabrication/insert}">
       <div class="row gtr-uniform">
 
         <div class="col-12">
           <label for="poketra" class="form-control">Nom Poketra</label>
           <select name="poketra" id="poketra">
-            <div th:each="">
-              <option th:value="${}" th:text="${}"></option>
+            <div th:each="poketra : ${listpoketra}">
+              <option th:value="${poketra.getId_poketra()}" th:text="${poketra.getNom()}"></option>
+            </div>
+          </select>
+          <label for="taille" class="form-control">Taille</label>
+          <select name="taille" id="taille">
+            <div th:each="taille : ${listtaille}">
+              <option th:value="${taille.getId_taille()}" th:text="${taille.getNom()}"></option>
             </div>
           </select>
           <label for="unite" class="form-control">Quantite</label>
           <div class="col-6 col-12-xsmall">
             <input type="number" name="unite" id="unite" />
           </div>
-          <label for="taille" class="form-control">Taille</label>
-          <select name="taille" id="taille">
-            <div th:each="">
-              <option th:value="${}" th:text="${}"></option>
-            </div>
-          </select>
           <label for="date" class="form-control">Date</label>
           <div class="col-6 col-12-xsmall">
             <input type="date" name="date" id="date" />

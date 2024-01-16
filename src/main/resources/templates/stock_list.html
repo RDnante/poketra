@@ -42,13 +42,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="">
-          <td></td>
-          <td></td>
-          <!--                    <td th:text="${@styleRepository.findById(@poketraRepository.findById(poketra.getId_poketra()).get().getId_style()).get().getNom()}"></td>-->
-          <!--                    <td th:text="${@typeRepository.findById(@poketraRepository.findById(poketra.getId_poketra()).get().getId_type()).get().getNom()}"></td>-->
-          <td></td>
-          <td></td>
+        <tr th:each="reste : ${listreste}">
+          <td th:text=" ${@matiereRepository.findById(reste.getId_matiere()).get().getNom()}"></td>
+          <td th:text="${reste.getSum_entrer()}"></td>
+          <td th:text="${reste.getSum_sortie()}"></td>
+          <td th:text="${reste.getReste()}"></td>
         </tr>
 
         </tfoot>
