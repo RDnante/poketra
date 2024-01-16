@@ -1,16 +1,16 @@
+<!DOCTYPE html>
 <html lang="en">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Selection matiere</title>
+  <title>Insert_prix</title>
   <link rel="stylesheet" th:href="@{/template/assets/css/main.css}" />
   <noscript><link rel="stylesheet" th:href="@{/template/assets/css/noscript.css}" /></noscript>
 </head>
 <body class="is-preload">
 <div id="wrapper">
 
-  <header id="hea<!DOCTYPE html>
-der">
+  <header id="header">
     <a href="index.html" class="logo">poketra</a>
   </header>
 
@@ -29,41 +29,22 @@ der">
   </nav>
 
   <div id="main">
-    <h2>Selection matiere</h2>
+    <h2>Insertion de prix</h2>
 
-    <form method="post" th:action="@{/production/matiere}">
+    <form method="get" th:action="@{/benefice/recherche}">
       <div class="row gtr-uniform">
-
-        <div class="col-12">
-          <label for="Matiere" class="form-control">Matiere</label>
-          <select name="Matiere" id="Matiere">
-            <div th:each="matiere : ${listmatiere}">
-              <option th:value="${matiere.getId_matiere()}" th:text="${matiere.getNom()}"></option>
-            </div>
-          </select>
+        <div class="col-6 col-12-xsmall">
+          <input type="number" name="benefice_min" id="benefice_min" value="" placeholder="benefice minimum" />
         </div>
-        <!-- Break -->
-
+        <div class="col-6 col-12-xsmall">
+          <input type="number" name="benefice_max" id="benefice_max" value="" placeholder="benefice maximum" />
+        </div>
         <!-- Break -->
         <div class="col-12">
           <ul class="actions">
-            <li><input type="submit" value="Selectionner" class="primary" /></li>
+            <li><input type="submit" value="Rechercher" class="primary" /></li>
           </ul>
         </div>
       </div>
     </form>
   </div>
-
-
-
-</div>
-
-<script th:src="@{/template/assets/js/jquery.min.js}"></script>
-<script th:src="@{/template/assets/js/jquery.scrollex.min.js}"></script>
-<script th:src="@{/template/assets/js/jquery.scrolly.min.js}"></script>
-<script th:src="@{/template/assets/js/browser.min.js}"></script>
-<script th:src="@{/template/assets/js/breakpoints.min.js}"></script>
-<script th:src="@{/template/assets/js/util.js}"></script>
-<script th:src="@{/template/assets/js/main.js}"></script>
-</body>
-</html>
