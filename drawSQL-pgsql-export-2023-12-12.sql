@@ -174,8 +174,17 @@ insert into prix_vente_poketra values (1,1,2000);
     select ((t.id_taille - 1) * (select valeur from max_taille)) as max from taille as t where t.id_taille = 2;
 
 -- 23/01/2024
+create table poste (
+    id_poste serial primary key,
+    nom varchar(100),
+    salaire decimal
+);
+
+insert into poste values (default,'styliste',2000);
+
 create table mpiasa (
     id_mpiasa serial primary key,
+    id_poste int references poste(id_poste),
     nom varchar(100),
     dte_naissance date default current_date
 );
@@ -198,11 +207,18 @@ insert into status_mpiasa values (default,'expert',5,50,3);
 
 create table date_recrutement (
     id_date_recrutement serial primary key,
-    id_mpiasa int references ouvrier(id_ouvrier),
+    id_mpiasa int references mpiasa(id_mpiasa),
     date_recrutement date default current_date
 );
 
 insert into date_recrutement values (default,1,'2018-12-25');
 insert into date_recrutement values (default,2,'2019-12-25');
 insert into date_recrutement values (default,3,'2020-12-25');
+
+create table karama (
+    id_karama serial primary key,
+    valeur decimal
+);
+
+insert into karama values (default,2000);
 
