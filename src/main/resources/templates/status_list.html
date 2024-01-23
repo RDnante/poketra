@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>status_liste</title>
+  <link rel="stylesheet" th:href="@{/template/assets/css/main.css}" />
+  <noscript><link rel="stylesheet" th:href="@{/template/assets/css/noscript.css}" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+  <header id="header">
+    <a href="index.html" class="logo">poketra</a>
+  </header>
+
+  <nav id="nav">
+    <ul class="links">
+      <li><a href="index.html">This is Massively</a></li>
+      <li class="active"><a href="generic.html">Generic Page</a></li>
+      <li><a href="elements.html">Elements Reference</a></li>
+    </ul>
+    <ul class="icons">
+      <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+      <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+      <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+    </ul>
+  </nav>
+
+  <div id="main">
+    <h3>Resultat de status</h3>
+    <div class="table-wrapper">
+      <table class="alt">
+        <thead>
+        <tr>
+          <th>nom Employer</th>
+          <th>Date de recrutemen</th>
+          <th>status</th>
+          <th>taux horaire</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="reste : ${}">
+          <td th:text=" ${}"></td>
+          <td th:text="${}"></td>
+          <td th:text="${}"></td>
+          <td th:text="${}"></td>
+        </tr>
+
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  </form>
+</div>
+
+
+
+
+
+<script th:src="@{/template/assets/js/jquery.min.js}"></script>
+<script th:src="@{/template/assets/js/jquery.scrollex.min.js}"></script>
+<script th:src="@{/template/assets/js/jquery.scrolly.min.js}"></script>
+<script th:src="@{/template/assets/js/browser.min.js}"></script>
+<script th:src="@{/template/assets/js/breakpoints.min.js}"></script>
+<script th:src="@{/template/assets/js/util.js}"></script>
+<script th:src="@{/template/assets/js/main.js}"></script>
+</body>
+</html>
