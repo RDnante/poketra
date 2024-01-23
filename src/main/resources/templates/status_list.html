@@ -36,17 +36,19 @@
         <tr>
           <th>nom Employer</th>
           <th>Date de recrutemen</th>
+          <th>poste</th>
           <th>status</th>
           <th>taux horaire</th>
 
         </tr>
         </thead>
         <tbody>
-        <tr th:each="reste : ${}">
-          <td th:text=" ${}"></td>
-          <td th:text="${}"></td>
-          <td th:text="${}"></td>
-          <td th:text="${}"></td>
+        <tr th:each="mpiasa : ${mpiasalist}">
+          <td th:text=" ${mpiasa.getNom()}"></td>
+          <td th:text="${mpiasa.getDate_recrutement().getDate_recrutement().toString()}"></td>
+          <td th:text="${mpiasa.getPoste().getNom()}"></td>
+          <td th:text="${mpiasa.getStatus_mpiasa().getNom()}"></td>
+          <td th:text="${mpiasa.getSalaire()}"></td>
         </tr>
 
         </tfoot>

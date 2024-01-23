@@ -31,4 +31,6 @@ public class Mpiasa {
     Date_recrutement date_recrutement;
     @Transient
     Poste poste;
+    @Transient
+    Double salaire;
 }

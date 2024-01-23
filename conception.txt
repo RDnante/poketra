@@ -23,5 +23,10 @@ taux horaire :
 	date_recrutement
 	status
 	taux_horaire
+
+mpiasa_insert
+status_update
+post_insert
+
 	
 

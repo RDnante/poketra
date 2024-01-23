@@ -44,8 +44,11 @@ public class MpiasaService {
         LocalDate recru = LocalDate.parse(mpiasa.getDate_recrutement().getDate_recrutement().toString());
         int age = Math.abs(recru.getYear() - anneezao.getYear());
         int val = exp + age;
+        System.out.println("val"+val);
 
-        Status_mpiasa status_mpiasa = statusMpiasaRepository.get_status_mpiasa(exp);
+        Status_mpiasa status_mpiasa = statusMpiasaRepository.get_status_mpiasa(val);
         mpiasa.setStatus_mpiasa(status_mpiasa);
+
+        mpiasa.setSalaire(mpiasa.getPoste().getSalaire() * mpiasa.getStatus_mpiasa().getValeur());
     }
 }

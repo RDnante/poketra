@@ -180,18 +180,18 @@ create table poste (
     salaire decimal
 );
 
-insert into poste values (default,'styliste',2000);
 
 create table mpiasa (
     id_mpiasa serial primary key,
     id_poste int references poste(id_poste),
+    annee_exp int,
     nom varchar(100),
     dte_naissance date default current_date
 );
 
-insert into mpiasa values (default,'Rakoto','2003-12-25');
-insert into mpiasa values (default,'Bekoto','2002-12-12');
-insert into mpiasa values (default,'Rajean','2000-01-12');
+insert into mpiasa values (default,1,0,'Rakoto','2003-12-25');
+insert into mpiasa values (default,1,0,'Bekoto','2002-12-12');
+insert into mpiasa values (default,1,0,'Rajean','2000-01-12');
 
 create table status_mpiasa (
     id_status_mpiasa serial primary key,
