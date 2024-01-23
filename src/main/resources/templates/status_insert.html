@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Insert Statut</title>
+  <link rel="stylesheet" th:href="@{/template/assets/css/main.css}" />
+  <noscript><link rel="stylesheet" th:href="@{/template/assets/css/noscript.css}" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+  <header id="header">
+    <a href="index.html" class="logo">poketra</a>
+  </header>
+
+  <nav id="nav">
+    <ul class="links">
+      <li><a href="index.html">This is Massively</a></li>
+      <li class="active"><a href="generic.html">Generic Page</a></li>
+      <li><a href="elements.html">Elements Reference</a></li>
+    </ul>
+    <ul class="icons">
+      <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+      <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+      <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+    </ul>
+  </nav>
+
+  <div id="main">
+    <h2>insertion Status</h2>
+
+    <form method="post" th:action="@{/status/insert}">
+      <div class="row gtr-uniform">
+        <div class="col-6 col-12-xsmall">
+          <input type="text" name="nom" id="nom" value="" placeholder="nom du statut" />
+        </div>
+        <!-- Break -->
+        <div class="col-12">
+          <ul class="actions">
+            <li><input type="submit" value="Save matiere" class="primary" /></li>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+</div>
+
+<script th:src="@{/template/assets/js/jquery.min.js}"></script>
+<script th:src="@{/template/assets/js/jquery.scrollex.min.js}"></script>
+<script th:src="@{/template/assets/js/jquery.scrolly.min.js}"></script>
+<script th:src="@{/template/assets/js/browser.min.js}"></script>
+<script th:src="@{/template/assets/js/breakpoints.min.js}"></script>
+<script th:src="@{/template/assets/js/util.js}"></script>
+<script th:src="@{/template/assets/js/main.js}"></script>
+</body>
+</html>
