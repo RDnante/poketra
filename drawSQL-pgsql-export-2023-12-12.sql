@@ -171,8 +171,38 @@ insert into prix_vente_poketra values (1,1,2000);
     select  dp.id_poketra,dp.id_taille,dp.id_style,pvp.prix_vente,(dp.total + dp.test) as prix_revient, (pvp.prix_vente - (dp.total + dp.test)) as benefice  from detail_prix_revient as dp
     join prix_vente_poketra as pvp on pvp.id_poketra = dp.id_poketra and pvp.id_taille = dp.id_taille;
 
+    select ((t.id_taille - 1) * (select valeur from max_taille)) as max from taille as t where t.id_taille = 2;
 
+-- 23/01/2024
+create table mpiasa (
+    id_mpiasa serial primary key,
+    nom varchar(100),
+    dte_naissance date default current_date
+);
 
+insert into mpiasa values (default,'Rakoto','2003-12-25');
+insert into mpiasa values (default,'Bekoto','2002-12-12');
+insert into mpiasa values (default,'Rajean','2000-01-12');
 
+create table status_mpiasa (
+    id_status_mpiasa serial primary key,
+    nom varchar(50),
+    min_diff int,
+    max_diff int,
+    valeur decimal
+);
 
+insert into status_mpiasa values (default,'ouvrier',0,1,1);
+insert into status_mpiasa values (default,'senior',2,4,2);
+insert into status_mpiasa values (default,'expert',5,50,3);
+
+create table date_recrutement (
+    id_date_recrutement serial primary key,
+    id_mpiasa int references ouvrier(id_ouvrier),
+    date_recrutement date default current_date
+);
+
+insert into date_recrutement values (default,1,'2018-12-25');
+insert into date_recrutement values (default,2,'2019-12-25');
+insert into date_recrutement values (default,3,'2020-12-25');
 

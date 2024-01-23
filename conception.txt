@@ -1,0 +1,27 @@
+but : mamantatra ny niveau de status anah ouvrier
+	status, taux horaire, 
+
+affichage =
+recrutement :
+	anarana
+	date_naissance
+	date_recrutement
+
+mampiditra status vaovao :
+	anarana
+
+status mpiasa :
+	dropdown list status
+	difference date
+	valeur
+
+filtre date :
+	date hanaovana anle resultat
+
+taux horaire :
+	anarana
+	date_recrutement
+	status
+	taux_horaire
+	
+
