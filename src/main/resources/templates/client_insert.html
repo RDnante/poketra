@@ -3,7 +3,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Insert Mpiasa</title>
+  <title>Insert_type</title>
   <link rel="stylesheet" th:href="@{/template/assets/css/main.css}" />
   <noscript><link rel="stylesheet" th:href="@{/template/assets/css/noscript.css}" /></noscript>
 </head>
@@ -29,27 +29,23 @@
   </nav>
 
   <div id="main">
-    <h2>insertion d'Employer</h2>
+    <h2>insertion de type</h2>
 
-    <form method="post" th:action="@{/mpiasa/insertrecrut}">
+    <form method="post" th:action="@{/vente/insertclient}">
       <div class="row gtr-uniform">
         <div class="col-6 col-12-xsmall">
-          <input type="text" name="nom" id="nom" value="" placeholder="nom" />
+          <input type="text" name="nom" id="type" value="" placeholder="nom" />
         </div>
-        <div class="col-6 col-12-xsmall">
-          <input type="number" name="exp" id="exp" value="" placeholder="année d'experience"/>
-        </div>
-        <div class="col-6 col-12-xsmall">
-          <input type="date" name="dte_naissance" id="dateNaissance" value="" placeholder="date de naissance" />
-        </div>
-        <div class="col-6 col-12-xsmall">
-          <input type="date" name="recrutement" id="dateRecrutement" value="" placeholder="date de Recrutement" />
-        </div>
-
         <!-- Break -->
         <div class="col-12">
+          <select name="genre" id="">
+            <option value="0">femme</option>
+            <option value="1">homme</option>
+          </select>
+        </div>
+        <div class="col-12">
           <ul class="actions">
-            <li><input type="submit" value="Save matiere" class="primary" /></li>
+            <li><input type="submit" value="ok" class="primary" /></li>
           </ul>
         </div>
       </div>

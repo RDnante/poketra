@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.sql.Date;
 import java.util.List;
 
 @Controller
@@ -46,11 +47,17 @@ public class MpiasaController {
         return "mpiasa_insert";
     }
     @PostMapping("/insertrecrut")
-    public String insertrecrut(Model model) {
+    public String insertrecrut(Model model,@RequestParam("dte_naissance") String dtenaissance,@RequestParam("recrutement")String recrute,@RequestParam("nom")String nom,@RequestParam("exp")int exp) {
+        Mpiasa mp = new Mpiasa();
+        mp.setRecrutement(Date.valueOf(recrute));
+        mp.setDte_naissance(Date.valueOf(dtenaissance));
+        mp.setNom(nom);
+        mp.setAnnee_exp(exp);
+        mp.setId_poste(1);
+        mpiasaRepository.save(mp);
 
 
-
-        return "Redirect:/mpiasa/mpiasa_insert";
+        return "redirect:/mpiasa/affrecrut";
     }
 
 }

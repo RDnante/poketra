@@ -28,5 +28,16 @@ mpiasa_insert
 status_update
 post_insert
 
+25/01/24
+	statistique de vente :
+	de vente par produit par genre
+	affichage insertion client
+	affichage vente produit
+	affichage statistique
+
+	
+	
+	
+
 	
 

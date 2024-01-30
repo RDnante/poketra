@@ -18,7 +18,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/poketra")
-public class PoketraController {
+public class    PoketraController {
     @Autowired
     PoketraRepository poketraRepository;
     @Autowired

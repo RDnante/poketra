@@ -221,4 +221,48 @@ create table karama (
 );
 
 insert into karama values (default,2000);
+ -- 25/01/2024
+create table client (
+    id_client serial primary key,
+    nom varchar,
+    genre int
+);
+
+insert into client values (default,'pascal',1);
+insert into client values (default,'Cynthia',0);
+
+
+create table vente (
+    id_vente serial primary key,
+    id_poketra int references  poketra(id_poketra),
+    id_client int references client(id_client),
+    date_vente date default current_date,
+    nombre int
+);
+
+insert into vente values (default,3,1,default,2);
+insert into vente values (default,3,2,default,1);
+insert into vente values (default,1,2,default,1);
+
+    create view vente_client as
+        select vente.id_vente,vente.id_client,vente.id_poketra,vente.date_vente,vente.nombre,c.nom,c.genre from vente
+            join client c on c.id_client = vente.id_client;
+
+-- create view vente_par_genre
+
+    create view vente_par_genre as
+    select sum(nombre),genre,id_poketra from vente_client
+        group by genre,id_poketra;
+
+    create view vente_genre_total as
+    select sum(nombre),genre from vente_client
+        group by genre;
+
+    select (select sum(nombre) from vente_client where genre = 0 and id_poketra = 3) as vente_feminin,
+           (select sum(nombre) from vente_client where genre = 1 and id_poketra = 3) as vente_masculin;
+
+    select
+
+
+
 

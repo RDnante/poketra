@@ -41,7 +41,7 @@ public class MpiasaService {
         mpiasa.setPoste(posteRepository.findById(mpiasa.getId_poste()).get());
         int exp = mpiasa.getAnnee_exp();
         LocalDate anneezao = LocalDate.parse(date);
-        LocalDate recru = LocalDate.parse(mpiasa.getDate_recrutement().getDate_recrutement().toString());
+        LocalDate recru = LocalDate.parse(mpiasa.getRecrutement().toString());
         int age = Math.abs(recru.getYear() - anneezao.getYear());
         int val = exp + age;
         System.out.println("val"+val);

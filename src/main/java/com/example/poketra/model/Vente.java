@@ -12,27 +12,24 @@ import java.sql.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "mpiasa")
-public class Mpiasa {
+@Entity(name = "vente")
+public class Vente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id_mpiasa;
+    Integer id_vente;
     @Column
-    Integer id_poste;
+    Integer id_poketra;
     @Column
-    String nom;
+    Integer id_client;
     @Column
-    Date recrutement;
+    Date date_vente;
     @Column
-    Date dte_naissance;
-    @Column
-    Integer annee_exp;
-    @Transient
-    Status_mpiasa status_mpiasa;
-    @Transient
-    Date_recrutement date_recrutement;
-    @Transient
-    Poste poste;
-    @Transient
-    Double salaire;
+    Integer nombre;
+
+    public void setNombre(Integer nombre) throws Exception{
+        if (nombre <= 0) {
+            throw new Exception("nombre invalide");
+        }
+        this.nombre = nombre;
+    }
 }
