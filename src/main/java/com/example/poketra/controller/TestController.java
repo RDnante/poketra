@@ -1,6 +1,9 @@
 package com.example.poketra.controller;
 
+import com.example.poketra.model.Reste_poketra;
+import com.example.poketra.repository.Reste_poketraRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +16,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/test")
 public class TestController {
+    @Autowired
+    Reste_poketraRepository restePoketraRepository;
     @GetMapping("/acceuil")
     public String acceuil(Model model) {
 
@@ -47,5 +52,20 @@ public class TestController {
 
 
         return "chart";
+    }
+
+    @GetMapping("/reste")
+    public String reste(Model model) {
+
+        List<Reste_poketra> list = restePoketraRepository.findAll();
+        model.addAttribute("listereste",list);
+
+        return "reste_poketra";
+    }
+
+    @GetMapping("/acceuil2")
+    public String acceuil2(Model model) {
+
+        return "acceuil";
     }
 }

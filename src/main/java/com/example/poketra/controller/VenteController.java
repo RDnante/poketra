@@ -1,5 +1,6 @@
 package com.example.poketra.controller;
 
+import com.example.poketra.Service.Stock_poketraService;
 import com.example.poketra.Service.VenteService;
 import com.example.poketra.model.Client;
 import com.example.poketra.model.Poketra;
@@ -32,6 +33,8 @@ public class VenteController {
     VenteRepository venteRepository;
     @Autowired
     VenteService venteService;
+    @Autowired
+    Stock_poketraService stockPoketraService;
     @GetMapping("/aff")
     public String aff(Model model) {
         return "client_insert";
@@ -64,6 +67,8 @@ public class VenteController {
 
 
         try {
+            stockPoketraService.vente(id_poketra,nombre,date);
+
             Vente v = new Vente();
             v.setId_client(id_client);
             v.setId_poketra(id_poketra);

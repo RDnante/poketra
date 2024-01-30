@@ -74,7 +74,6 @@
     </nav>
 
     <div id="main">
-
         <div class="table-wrapper">
             <table class="alt">
                 <thead>
@@ -100,7 +99,6 @@
 <!--                can increase readability and comprehension for small datasets.-->
 <!--            </p>-->
         </figure>
-
     </div>
 
 
@@ -111,41 +109,92 @@
 <script th:src="@{/chart/modules/export-data.js}"></script>
 <script th:src="@{/chart/modules/accessibility.js}"></script>
 
-<script th:inline="javascript">
-    // Data retrieved https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
+<script type="text/javascript">
     Highcharts.chart('container', {
         chart: {
-            type: 'line'
+            type: 'column'
         },
         title: {
-            text: 'STATISTIQUE'
+            text: 'Corn vs wheat estimated production for 2020',
+            align: 'left'
         },
         subtitle: {
-            text: 'Source:'
+            text:
+                'Source: <a target="_blank" ' +
+                'href="https://www.indexmundi.com/agriculture/?commodity=corn">indexmundi</a>',
+            align: 'left'
         },
         xAxis: {
-            categories: [[${genre}]]
+            categories: ['VENTE'],
+            crosshair: true,
+            accessibility: {
+                description: 'Countries'
+            }
         },
         yAxis: {
+            min: 0,
             title: {
-                text: 'nombre'
+                text: '1000 metric tons (MT)'
             }
+        },
+        tooltip: {
+            valueSuffix: ''
         },
         plotOptions: {
-            line: {
-                dataLabels: {
-                    enabled: true
-                },
-                enableMouseTracking: false
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
             }
         },
-        series: [{
-            name: 'Reggane',
-            data: [[${nombre}]]
-        }]
+        series: [
+            {
+                name: 'Femme',
+                data: [ [[${sumfemme}]] ]
+            },
+            {
+                name: 'Homme',
+                data: [ [[${sumhomme}]] ]
+            }
+        ]
     });
 
 </script>
+
+<!--<script th:inline="javascript">-->
+<!--    // Data retrieved https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature-->
+<!--    Highcharts.chart('container', {-->
+<!--        chart: {-->
+<!--            type: 'line'-->
+<!--        },-->
+<!--        title: {-->
+<!--            text: 'STATISTIQUE'-->
+<!--        },-->
+<!--        subtitle: {-->
+<!--            text: 'Source:'-->
+<!--        },-->
+<!--        xAxis: {-->
+<!--            categories: [[${genre}]]-->
+<!--        },-->
+<!--        yAxis: {-->
+<!--            title: {-->
+<!--                text: 'nombre'-->
+<!--            }-->
+<!--        },-->
+<!--        plotOptions: {-->
+<!--            line: {-->
+<!--                dataLabels: {-->
+<!--                    enabled: true-->
+<!--                },-->
+<!--                enableMouseTracking: false-->
+<!--            }-->
+<!--        },-->
+<!--        series: [{-->
+<!--            name: 'Reggane',-->
+<!--            data: [[${nombre}]]-->
+<!--        }]-->
+<!--    });-->
+
+<!--</script>-->
 
 <script th:src="@{/template/assets/js/jquery.min.js}"></script>
 <script th:src="@{/template/assets/js/jquery.scrollex.min.js}"></script>

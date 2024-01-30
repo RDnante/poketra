@@ -261,7 +261,20 @@ insert into vente values (default,1,2,default,1);
     select (select sum(nombre) from vente_client where genre = 0 and id_poketra = 3) as vente_feminin,
            (select sum(nombre) from vente_client where genre = 1 and id_poketra = 3) as vente_masculin;
 
-    select
+
+create table etat_stock_poketra (
+    id_etat_stock_poketra serial primary key,
+    id_poketra int references poketra(id_poketra),
+    entrer int,
+    sortie int,
+    date date default  current_date
+);
+
+insert into etat_stock_poketra values (default,1,0,1,default);
+
+create view reste_poketra as
+    select id_poketra,(sum(entrer) - sum(sortie)) as reste from etat_stock_poketra
+        group by id_poketra;
 
 
 

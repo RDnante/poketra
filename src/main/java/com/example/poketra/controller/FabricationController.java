@@ -1,10 +1,9 @@
 package com.example.poketra.controller;
 
 import com.example.poketra.Service.Sortie_stock_matiereService;
-import com.example.poketra.model.Poketra;
-import com.example.poketra.model.Reste_stock_matiere;
-import com.example.poketra.model.Sortie_stock_matiere;
-import com.example.poketra.model.Taille;
+import com.example.poketra.Service.Stock_poketraService;
+import com.example.poketra.model.*;
+import com.example.poketra.repository.Etat_stock_poketraRepository;
 import com.example.poketra.repository.PoketraRepository;
 import com.example.poketra.repository.TailleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.sql.Date;
 import java.util.List;
 
 @Controller
@@ -26,6 +26,8 @@ public class FabricationController {
     TailleRepository tailleRepository;
     @Autowired
     Sortie_stock_matiereService sortieStockMatiereService;
+    @Autowired
+    Etat_stock_poketraRepository etatStockPoketraRepository;
     @GetMapping("/affins")
     public String affins(Model model) {
         List<Poketra> listpoketra = poketraRepository.findAll();
@@ -42,6 +44,14 @@ public class FabricationController {
         try {
             List<Sortie_stock_matiere> list = sortieStockMatiereService.fabrication(poketra,taille,unite,date);
             sortieStockMatiereService.insert_fabrication(list);
+            Etat_stock_poketra e = new Etat_stock_poketra();
+            e.setId_poketra(poketra);
+            e.setEntrer(unite.intValue());
+            e.setDate(Date.valueOf(date));
+            e.setSortie(0);
+
+            etatStockPoketraRepository.save(e);
+
 
             return "redirect:/fabrication/affins";
 
