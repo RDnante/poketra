@@ -35,44 +35,44 @@
       <div class="div_link">
         <h3><strong>Taille</strong></h3>
         <ul>
-          <li><a href="">Insertion de taille</a></li>
+          <li><a th:href="@{/taille/pageinsert}">Insertion de taille</a></li>
         </ul>
       </div>
 
       <div class="div_link">
         <h3><strong>Employes</strong></h3>
         <ul>
-          <li><a href="">Insertion Employer</a></li>
-          <li><a href="">Update Employer</a></li>
-          <li><a href="">List Status Employer</a></li>
+          <li><a th:href="@{/mpiasa/affrecrut}">Insertion Employer</a></li>
+          <li><a th:href="@{/mpiasa/status}">Update Employer</a></li>
+          <li><a th:href="@{/mpiasa/aff}">List Status Employer</a></li>
         </ul>
       </div>
 
       <div class ="div_link">
-        <h3><strong>Stocks</strong></h3>
+        <h3><strong>Stocks matiere</strong></h3>
         <ul>
-          <li><a href="">Stock insert</a></li>
+          <li><a th:href="@{/entrer/affins}">Stock insert</a></li>
         </ul>
       </div>
       <div class ="div_link">
         <h3><strong>Type</strong></h3>
         <ul>
-          <li><a href="">Insertion de Type de sac </a></li>
+          <li><a th:href="@{/type/page}">Insertion de Type de sac </a></li>
         </ul>
       </div>
 
       <div class ="div_link">
         <h3><strong>Fabrications</strong></h3>
         <ul>
-          <li><a href="">Fabrication Poketra</a></li>
-          <li><a href=""></a></li>
+          <li><a th:href="@{/fabrication/affins}">Fabrication Poketra</a></li>
+          <li><a th:href="@{/fabrication/reste}">Reste matiere</a></li>
         </ul>
       </div>
 
       <div class ="div_link">
         <h3><strong>Look et Matiere</strong></h3>
         <ul>
-          <li><a href="">Insertion de matiere avec son look </a></li>
+          <li><a th:href="@{/look_matiere/page}">Insertion de matiere avec son look </a></li>
 
         </ul>
       </div>
@@ -80,17 +80,17 @@
       <div class ="div_link">
         <h3><strong>Look</strong></h3>
         <ul>
-          <li><a href="">Creation Look </a></li>
-          <li><a href="">List des Looks</a></li>
-          <li><a href="">List look selon les matieres</a></li>
+          <li><a th:href="@{/look/pageinsert}">Creation Look </a></li>
+          <li><a th:href="@{/look/get}">List des Looks</a></li>
+<!--          <li><a href="">List look selon les matieres</a></li>-->
         </ul>
       </div>
 
       <div class ="div_link">
         <h3><strong>Matiere</strong></h3>
         <ul>
-          <li><a href="">Insertion de matiere</a></li>
-          <li><a href="">Selection de matiere</a></li>
+          <li><a th:href="@{/matiere/pageinsert}">Insertion de matiere</a></li>
+          <li><a th:href="@{/matiere/selection}">Selection de matiere</a></li>
         </ul>
       </div>
 
@@ -98,14 +98,14 @@
       <div class ="div_link">
         <h3><strong>Poketra</strong></h3>
         <ul>
-          <li><a href="">Insertion de poketra </a></li>
+          <li><a th:href="@{/poketra/page}">Insertion de poketra </a></li>
         </ul>
       </div>
 
       <div class ="div_link">
         <h3><strong>Sur les Prix</strong></h3>
         <ul>
-          <li><a href="">Insertion de Prix </a></li>
+          <li><a th:href="@{/prix/prixinsert}">Insertion de Prix </a></li>
         </ul>
       </div>
 
@@ -113,7 +113,7 @@
       <div class ="div_link">
         <h3><strong>Production</strong></h3>
         <ul>
-          <li><a href="">Insertion de produit </a></li>
+          <li><a th:href="@{/production/page}">Insertion de produit </a></li>
         </ul>
       </div>
 
@@ -121,29 +121,22 @@
       <div class ="div_link">
         <h3><strong>Style</strong></h3>
         <ul>
-          <li><a href="">Insertion de style </a></li>
+          <li><a th:href="@{/style/page}">Insertion de style </a></li>
         </ul>
       </div>
 
       <div class ="div_link">
         <h3><strong>Taille Control</strong></h3>
         <ul>
-          <li><a href="">Inserer une nouvelle taille</a></li>
+          <li><a th:href="@{/taille/pageinsert}">Inserer une nouvelle taille</a></li>
         </ul>
       </div>
 
       <div class ="div_link">
         <h3><strong>Vente</strong></h3>
         <ul>
-          <li><a href="">insertion de vente </a></li>
-          <li><a href="">Statistique de ventes </a></li>
-        </ul>
-      </div>
-
-      <div class ="div_link">
-        <h3><strong>Test</strong></h3>
-        <ul>
-          <li><a href="">Chart</a></li>
+          <li><a th:href="@{/vente/affvente}">insertion de vente </a></li>
+          <li><a th:href="@{/vente/afffiltre}">Statistique de ventes </a></li>
         </ul>
       </div>
 
